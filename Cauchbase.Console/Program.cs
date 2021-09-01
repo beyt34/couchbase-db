@@ -10,14 +10,13 @@ using Couchbase.KeyValue;
 namespace Cauchbase.Console
 {
     public class Program
-
     {
         static async Task Main(string[] args)
         {
             var collection = await GetCollection();
             
             var id = Guid.NewGuid().ToString();
-            var list = GetSampleData(10000);
+            var list = GetSampleData(100000);
 
             await UpsertAsync(collection, id, list);
 
